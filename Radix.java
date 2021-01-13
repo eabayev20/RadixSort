@@ -21,12 +21,12 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
   public static void radixSortSimple(SortableLinkedList data){
 
       int maxe = 0;
-      for(int i = 0; i < data.size(); i ++){ //loop through data to get maxValue
-          if (data.get(i) > maxe){
-            maxe = data.get(i);
+      while (data.size() > 0){
+          if (data.get(0) > maxe){
+            maxe = data.remove(0);
           }
       }
-      int numsss = length(maxe); //e.g 432, mostdigits would be 3
+      int numsss = length(maxe);
       for(int i = 0; i < numsss; i ++){
         SortableLinkedList zero = new SortableLinkedList();
         SortableLinkedList one = new SortableLinkedList();
@@ -38,9 +38,9 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
         SortableLinkedList seven = new SortableLinkedList();
         SortableLinkedList eight = new SortableLinkedList();
         SortableLinkedList nine = new SortableLinkedList();
-        for(int j = 0; j < data.size(); j ++){ //loop through data to sort
-      int element = data.get(j);
-      int num = nth(element,i);  //gets ones place, added according to where. This is a stable sort too. Is there a way to do this with a loop?
+        while (data.size() > 0){
+      int element = data.remove(0);
+      int num = nth(element,i);
       if(num ==0) {
          zero.add(element);
        }
@@ -75,7 +75,7 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
     SortableLinkedList temp = new SortableLinkedList();
     SortableLinkedList[] buckets = new SortableLinkedList[]{zero,one,two,three,four,five,six,seven,eight,nine};
     Radix.merge(temp,buckets);
-    for(int j = data.size()-1; j >= 0; j --){//removing from data to add in a sorted order
+    for(int j = data.size()-1; j >= 0; j --){
       data.remove(j);
     }
     data.extend(temp);
