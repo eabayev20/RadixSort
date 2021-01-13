@@ -37,5 +37,29 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
         SortableLinkedList six = new SortableLinkedList();
         SortableLinkedList seven = new SortableLinkedList();
         SortableLinkedList eight = new SortableLinkedList();
-        SortableLinkedList nine = new SortableLinkedList(); 
+        SortableLinkedList nine = new SortableLinkedList();
+        for(int j = 0; j < data.size(); j ++){ //loop through data to sort
+      int ele = data.get(j);
+      int digit = nth(ele,i);  //gets ones place, added according to where. This is a stable sort too. Is there a way to do this with a loop?
+      if(digit ==0) zero.add(ele);
+      else if(digit == 1) one.add(ele);
+      else if(digit == 2) two.add(ele);
+      else if(digit == 3) three.add(ele);
+      else if(digit == 4) four.add(ele);
+      else if(digit == 5) five.add(ele);
+      else if(digit == 6) six.add(ele);
+      else if(digit == 7) seven.add(ele);
+      else if(digit == 8) eight.add(ele);
+      else nine.add(ele);
+    }
+    SortableLinkedList temp = new SortableLinkedList();
+    SortableLinkedList[] buckets = new SortableLinkedList[]{zero,one,two,three,four,five,six,seven,eight,nine};
+    Radix.merge(temp,buckets);
+    for(int j = data.size()-1; j >= 0; j --){//removing from data to add in a sorted order
+      data.remove(j);
+    }
+    data.extend(temp);
+
+  }
+}
 }
