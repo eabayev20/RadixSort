@@ -39,18 +39,38 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
         SortableLinkedList eight = new SortableLinkedList();
         SortableLinkedList nine = new SortableLinkedList();
         for(int j = 0; j < data.size(); j ++){ //loop through data to sort
-      int ele = data.get(j);
-      int digit = nth(ele,i);  //gets ones place, added according to where. This is a stable sort too. Is there a way to do this with a loop?
-      if(digit ==0) zero.add(ele);
-      else if(digit == 1) one.add(ele);
-      else if(digit == 2) two.add(ele);
-      else if(digit == 3) three.add(ele);
-      else if(digit == 4) four.add(ele);
-      else if(digit == 5) five.add(ele);
-      else if(digit == 6) six.add(ele);
-      else if(digit == 7) seven.add(ele);
-      else if(digit == 8) eight.add(ele);
-      else nine.add(ele);
+      int element = data.get(j);
+      int num = nth(element,i);  //gets ones place, added according to where. This is a stable sort too. Is there a way to do this with a loop?
+      if(num ==0) {
+         zero.add(element);
+       }
+      else if(num == 1) {
+        one.add(element);
+      }
+      else if(num == 2) {
+        two.add(element);
+      }
+      else if(num == 3) {
+        three.add(element);
+      }
+      else if(num == 4) {
+        four.add(element);
+      }
+      else if(num == 5) {
+        five.add(element);
+      }
+      else if(num == 6) {
+        six.add(element);
+      }
+      else if(num == 7) {
+        seven.add(element);
+      }
+      else if(num == 8) {
+        eight.add(element);
+      }
+      else {
+        nine.add(element);
+      }
     }
     SortableLinkedList temp = new SortableLinkedList();
     SortableLinkedList[] buckets = new SortableLinkedList[]{zero,one,two,three,four,five,six,seven,eight,nine};
