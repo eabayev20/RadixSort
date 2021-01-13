@@ -20,14 +20,14 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
   }
   public static void radixSortSimple(SortableLinkedList data){
 
-      int maxValue = 0;
+      int maxe = 0;
       for(int i = 0; i < data.size(); i ++){ //loop through data to get maxValue
-          if (data.get(i) > maxValue){
-            maxValue = data.get(i);
+          if (data.get(i) > maxe){
+            maxe = data.get(i);
           }
       }
-      int mostDigits = length(maxValue); //e.g 432, mostdigits would be 3
-      for(int i = 0; i < mostDigits; i ++){
+      int numsss = length(maxe); //e.g 432, mostdigits would be 3
+      for(int i = 0; i < numsss; i ++){
         SortableLinkedList zero = new SortableLinkedList();
         SortableLinkedList one = new SortableLinkedList();
         SortableLinkedList two = new SortableLinkedList();
