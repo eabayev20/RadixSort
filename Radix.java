@@ -18,23 +18,24 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
       original.extend(buckets[i]);
     }
   }
-
   public static void radixSortSimple(SortableLinkedList data){
 
-    int maxValue = 0;
-    for(int i = 0; i < data.size(); i ++){ //loop through data to get maxValue
-        if (data.get(i) > maxValue){
-          maxValue = data.get(i);
-        }
-    }
-    int mostDigits = length(maxValue); //e.g 432, mostdigits would be 3
-    for(int i = 0; i < mostDigits; i ++){
-      SortableLinkedList zero = new SortableLinkedList();
-      SortableLinkedList one = new SortableLinkedList();
-      SortableLinkedList two = new SortableLinkedList();
-      SortableLinkedList three = new SortableLinkedList();
-      SortableLinkedList four = new SortableLinkedList();
-      SortableLinkedList five = new SortableLinkedList();
-      SortableLinkedList six = new 
-
+      int maxValue = 0;
+      for(int i = 0; i < data.size(); i ++){ //loop through data to get maxValue
+          if (data.get(i) > maxValue){
+            maxValue = data.get(i);
+          }
+      }
+      int mostDigits = length(maxValue); //e.g 432, mostdigits would be 3
+      for(int i = 0; i < mostDigits; i ++){
+        SortableLinkedList zero = new SortableLinkedList();
+        SortableLinkedList one = new SortableLinkedList();
+        SortableLinkedList two = new SortableLinkedList();
+        SortableLinkedList three = new SortableLinkedList();
+        SortableLinkedList four = new SortableLinkedList();
+        SortableLinkedList five = new SortableLinkedList();
+        SortableLinkedList six = new SortableLinkedList();
+        SortableLinkedList seven = new SortableLinkedList();
+        SortableLinkedList eight = new SortableLinkedList();
+        SortableLinkedList nine = new SortableLinkedList(); 
 }
