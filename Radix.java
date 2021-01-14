@@ -19,29 +19,25 @@ public static void merge(SortableLinkedList original, SortableLinkedList[] bucke
     }
   }
   public static void radixSortSimple(SortableLinkedList data){
-
-      int maxValue = 0;
-    while(data.size()>0){ //loop through data to get maxValue
-          if (data.get(0) > maxValue){
-            maxValue = data.remove(0);
-          }
-      }
-      int mostDigits = length(maxValue); //e.g 432, mostdigits would be 3
-      SortableLinkedList[] buckets = new SortableLinkedList[10];
-      for(int i = 0; i < 10; i ++){
-        buckets[i] = new SortableLinkedList();
-      }
-
-      for(int i = 0; i < mostDigits; i ++){
-        while(data.size()>0){
-          int ele =data.remove(0);
-          int digit = nth(ele,i);
-          buckets[digit].add(ele);
-
+        SortableLinkedList[] buckets = new SortableLinkedList[10];
+        for(int i = 0; i < 10; i ++){
+          buckets[i] = new SortableLinkedList();
         }
-        merge(data,buckets);
-      }
 
-  }
+        int c = 1;
+        for(int i = 0; i < c; i ++){
+          while(data.size()>0) {
+            if(length(data.get(0)) > c) {
+              c = length(data.get(0));
+            }
+            int ele = data.get(0);
+            int d = nth(ele,i);
+            buckets[d].add(ele);
+            data.remove(0);
+          }
+          merge(data,buckets);
+        }
+
+    }
 public static void radixSort(SortableLinkedList data) {}
 }
